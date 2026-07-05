@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 — validate.py
+
+- **Added `validate.py`.** A stdlib-only Python script that checks the plugin
+  installation end-to-end: manifest completeness, required files, MCP config
+  structure, Python environment, and connector detection. Runs standalone
+  (`python3 validate.py`) with coloured pass/fail output and a `--json` flag
+  for CI integration. Exit code 0 on all-pass, 1 on any failure.
+
 ## 1.0.0 — first public release
 
 - **Complete plugin manifest.** `plugin.json` now includes `version`, `author`,
