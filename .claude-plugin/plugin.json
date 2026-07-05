@@ -1,0 +1,12 @@
+{
+  "name": "composer",
+  "version": "1.0.0",
+  "description": "Package stories with matched visual assets, usage rights, platform-ready crops, and archival context. One brief in, one publishable package out.",
+  "author": {
+    "name": "Raj Gurbani"
+  },
+  "homepage": "https://github.com/EditorialOS/composer",
+  "repository": "https://github.com/EditorialOS/composer",
+  "license": "Apache-2.0",
+  "keywords": ["editorial", "publishing", "photography", "DAM", "content", "rights", "media", "cowork"]
+}
