@@ -74,6 +74,17 @@ The loop is: Photo Editor writes the rights record into the file at shoot time. 
 
 If your team uses Photo Editor, every asset tagged at ingest arrives at Composer with its rights status already resolved.
 
+## Validate Your Install
+
+Run before your first `/compose` to confirm everything is wired correctly:
+
+```
+python3 validate.py
+```
+
+Checks manifest, required files, MCP config, Python version, and connector
+detection. Add `--json` for CI output. Exit code 0 = ready to go.
+
 ## Support
 
 Questions or feedback: [github.com/EditorialOS/composer/issues](https://github.com/EditorialOS/composer/issues)
