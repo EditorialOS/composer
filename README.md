@@ -66,7 +66,7 @@ Connector setup details in `CONNECTORS.md`.
 
 ## Works With Photo Editor
 
-Composer and Photo Editor form a closed loop.
+Composer and [Photo Editor](https://github.com/EditorialOS/photo-editor) form a closed loop.
 
 Photo Editor runs at ingest: it embeds photographer credit, usage rights, and expiration dates directly into every image file as XMP metadata. Composer runs at publish: its rights check reads exactly those fields — photographer, usage_rights, expiration — to classify each asset as CLEARED, EXPIRING, CHECK REQUIRED, or EXPIRED.
 
@@ -85,6 +85,33 @@ python3 validate.py
 Checks manifest, required files, MCP config, Python version, and connector
 detection. Add `--json` for CI output. Exit code 0 = ready to go.
 
-## Support
+---
+
+  ## Eval Framework
+
+  Composer scores each package against five delivery criteria before reporting its status:
+
+  | Criterion | What it checks |
+  |---|---|
+  | **Visual assets** | 3+ images with confirmed rights and generated derivatives |
+  | **Lead image** | Single recommended image with documented reasoning and crop viability |
+  | **Archive context** | Prior coverage found, summarized, and categorized by type |
+  | **Web context** | Competitive landscape mapped with undercovered angles identified |
+  | **Derivatives** | All four crop ratios generated or noted as requiring manual crop for all cleared assets |
+
+  A package with all five criteria complete is `FULLY COMPOSED`. Partial completion is reported as `COMPOSED WITH GAPS` with the missing criteria and what connector would resolve each gap.
+
+  ---
+
+  ## Install
+
+  Run in the Claude Code terminal:
+
+  ```
+  /plugin marketplace add https://github.com/EditorialOS/editorial-os.git
+  /plugin install composer@editorialos
+  ```
+
+  ## Support
 
 Questions or feedback: [github.com/EditorialOS/composer/issues](https://github.com/EditorialOS/composer/issues)
